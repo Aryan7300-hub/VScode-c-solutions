@@ -16,8 +16,9 @@ void printArray(int arr[100][100], int m, int n){
 
     for(int i = 0; i < m; i++){
         for(int j = 0; j < n; j++){
-            printf("Value of %d %d: %d\n", i, j, arr[i][j]);
+            printf("%d ", arr[i][j]);
         }    
+        printf("\n");
     }
     printf("\n");
 }
