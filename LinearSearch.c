@@ -14,7 +14,7 @@ void printArray(int arr[], int n){
     for(int i = 0; i < n; i++){
         printf("Value of index %d: %d\n", i, arr[i]);
     }
-    prinf("\n");
+    printf("\n");
 }
 int LinearSearch(int* arr, int n, int val){
     for(int i = 0; i<n; i++){
