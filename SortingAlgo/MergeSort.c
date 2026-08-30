@@ -1,5 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
+void createArray(int* arr, int n){
+
+    printf("Enter the values in array: \n");
+    for(int i = 0; i<n; i++){
+        printf("Enter value of index %d: ", i);
+        scanf("%d", &arr[i]);
+    }
+    printf("\n");
+}
+void printArray(int arr[], int n){
+
+    for(int i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
 void merge(int* arr, int left, int mid, int right){
     int* temp = (int*)malloc((right-left+1)*sizeof(int));
 
@@ -34,14 +50,21 @@ void mergeSort(int* arr, int left, int right){
     merge(arr, left, mid, right);
 }
 int main(){
-    int arr[5] = {10,52, 20, 92, 23};
-    int n = 5;
+    int arr[100];
+    int n;
+
+    printf("Enter the size of Array: ");
+    scanf("%d", &n);
+
+    createArray(arr, n);
+
+    printf("Original Array: ");
+    printArray(arr, n);
+
     mergeSort(arr, 0, n-1);
 
-    for(int i = 0; i<n; i++){
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printf("Sorted Array: ");
+    printArray(arr, n);
 
     return 0;
 }

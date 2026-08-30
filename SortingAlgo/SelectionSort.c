@@ -20,32 +20,21 @@ void swap(int* a, int* b){
     *a = *b;
     *b = temp;
 }
-int partion(int* arr, int low, int high){
-    int pivot = arr[low];
-
-    int i = low;
-    int j = high;
-
-    while(i<j){
-
-        while(arr[i]<=pivot && i<=high) i++;
-        while(arr[j] > pivot && j>=low) j--;
-
-        if(i<j) swap(&arr[i], &arr[j]);
+void selectionSort(int* arr, int n){
+    for(int i = 0; i<n-1; i++){
+        int sI = i; //Smallest Index
+        for(int j = i+1; j<n; j++){
+            if(arr[j] < arr[sI]){
+                sI = j;
+            }
+        }
+        swap(&arr[i], &arr[sI]);
     }
-    swap(&arr[low], &arr[j]);
-    return j;
-}
-void quickSort(int* arr, int low, int high){
-    if(low>=high) return;
-
-    int pIdx = partion(arr, low, high);
-    quickSort(arr, low, pIdx-1);
-    quickSort(arr, pIdx+1, high);
 }
 int main(){
     int arr[100];
     int n;
+
     printf("Enter the size of Array: ");
     scanf("%d", &n);
 
@@ -54,10 +43,10 @@ int main(){
     printf("Original Array: ");
     printArray(arr, n);
 
-    quickSort(arr, 0, n-1);
+    selectionSort(arr,n);
 
     printf("Sorted Array: ");
-    printArray(arr, n);
+    printArray(arr,n);
 
     return 0;
 }
