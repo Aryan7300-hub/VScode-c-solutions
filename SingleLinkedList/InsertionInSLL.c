@@ -14,6 +14,7 @@ struct Node* CreateLL(int n){
         scanf("%d", &p->val);
         p->next = NULL;
     }
+    printf("\n");
     return dummy.next;
 }
 void printLLR(struct Node* head){
