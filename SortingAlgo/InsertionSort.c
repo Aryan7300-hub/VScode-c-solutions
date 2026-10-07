@@ -28,7 +28,6 @@ void insertionSort(int* arr, int n){
             j--;
         }
     }
-    printf("jk");
 }
 int main(){
     int arr[100];
