@@ -77,7 +77,7 @@ int main(){
             case 4:{
                 return 0;
             }
-            default :
+            default:
                 printf("Invalid Choice\n");
         }
     }
